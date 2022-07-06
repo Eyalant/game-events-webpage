@@ -1,0 +1,7 @@
+.git/
+.vscode/
+e3_app/
+__pycache__/
+e3.code-workspace
+*.json
+.env

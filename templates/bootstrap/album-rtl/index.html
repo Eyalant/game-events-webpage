@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.98.0">
+  <title>אירועי (לא) E3 - יוני 22</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album-rtl/">
+  <link href="static/assets/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 py-1">
+            <ul class="list-unstyled">
+              <li><a href="https://twitter.com/EyalLantz" class="text-white text-decoration-none"> - צרו קשר</a></li>
+              <li><a href="https://www.facebook.com/groups/workinggamers" class="text-white text-decoration-none">-
+                  Working Gamers בפייסבוק</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-danger shadow-sm">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="navbarheader">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <p style="margin-left: auto; margin-block: auto; margin-right: 12px; color:honeydew; font-weight: bold;">אקסטרות
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="py-2 text-center container">
+      <div class="row py-lg-1">
+        <div class="col-lg-6 col-md-4 mx-auto">
+          <h1 class="fw-dark font-weight-bold">אירועי גיימינג - יוני 2022</h1>
+          <h6 class="fw-light" style="font-style:italic;">עדכון 10.6: כל הלינקים באוויר :)</h6>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-3 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {% for event in events %}
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="{{url_for('static', filename='')}}{{event.img}}" style="object-fit: fill;">
+              <div class="card-body">
+                <p class="card-text" style="font-size: small;font-weight: bold">{{event.name}}</p>
+                <p class="text-muted" style="font-size: smaller">{{event.date}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href={{event.link_watch}} role="button">לצפיה</a>
+                    <a class="btn btn-sm btn-outline-secondary" style="margin-left: 10px" href={{event.link_twitter}}
+                      role="button">לטוויטר</a>
+                  </div>
+                  <a target="_blank" href="{{event.link_googlecal}}"><img border="0"
+                      src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a style="color:#3d3d5c" href="#">פייג' אפ ^</a>
+      </p>
+    </div>
+  </footer>
+  <script src="static/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
