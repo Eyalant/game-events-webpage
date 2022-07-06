@@ -13,9 +13,5 @@ db = SQLAlchemy(app)
 @app.route("/")
 def splash_page():
     from events_io import db_init, read_events_from_file, get_all_events
-<<<<<<< HEAD
     db_init(read_events_from_file(path_to_file="")) # can run just once for the most part
-=======
-    # db_init(read_events_from_file(path_to_file=""))
->>>>>>> 7454dc1 (replaced app.py)
     return render_template("bootstrap/album-rtl/index.html", events=get_all_events())
